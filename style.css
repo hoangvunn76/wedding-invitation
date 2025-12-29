@@ -1,0 +1,612 @@
+/* RESET & FONT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'Poppins', sans-serif; */
+  background: rgba(255, 192, 203, 0.25); /* hồng trong suốt */
+  backdrop-filter: blur(5px);
+  color: #444;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+h1,
+h2,
+h3 {
+  font-family: "Great Vibes", cursive !important;
+  color: #d6336c;
+}
+
+/* Nút nhạc */
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: transform 0.3s;
+}
+#music-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Hiệu ứng trái tim */
+#hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100000vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10000;
+}
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 16px;
+  opacity: 0.8;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* SECTION chung */
+section {
+  text-align: center;
+  padding: 60px 20px;
+  margin: 40px auto;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1  ;
+  box-sizing: border-box;
+}
+
+/* Hero section */
+.hero .title {
+  /* font-family: 'Great Vibes', cursive; */
+  font-size: 3rem;
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+.hero .subtitle {
+  letter-spacing: 2px;
+  color: #555;
+  font-size: 1.2rem;
+}
+.invite-text {
+  margin: 10px 0 30px;
+  font-style: italic;
+}
+.couple-photo {
+  width: 100%;
+  max-width: 400px;
+  height: 350px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* Thông tin cô dâu chú rể */
+.details-bride-groom {
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+.detail-bride, .detail-bride{
+  flex: 2;
+}
+.detail-bride-center {
+  flex: 1;
+}
+
+
+.icon-heatheat {
+  font-size: 100px;
+}
+
+/* Info section */
+.info h2 {
+  color: #d81b60;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+/* Carousel ảnh */
+.carousels {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 15px;
+  padding: 10px;
+  cursor: grab;
+}
+
+.carousels img {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  scroll-snap-align: center;
+  transition: transform 0.3s;
+}
+
+.carousels img:hover {
+  transform: scale(1.05);
+}
+
+/* Thanks section */
+.thanks {
+  color: #e91e63;
+  font-style: italic;
+}
+/* ===== Hiệu ứng cho icon trái tim ===== */
+.icon-heatheat {
+  display: inline-block;
+  font-size: 50px;
+  color: #ff4b8a;
+  text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+  animation: heartbeat 1.5s infinite ease-in-out, glow 3s infinite ease-in-out;
+  position: relative;
+}
+
+/* Hiệu ứng nhịp tim */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+}
+
+/* Hiệu ứng sáng mờ */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 105, 180, 1);
+  }
+}
+
+/* Hiệu ứng ánh sáng lấp lánh quanh trái tim */
+.icon-heatheat::after {
+  content: "✨";
+  position: absolute;
+  font-size: 24px;
+  top: -20px;
+  right: -25px;
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(20deg) scale(1.3);
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero .title {
+    font-size: 2.2rem;
+  }
+  .icon-heat {
+    display: block;
+    .carousel img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+/* thời gian ngày cưới  */
+ .wedding-schedule {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .schedule-card {
+    flex: 1 1 300px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 192, 203, 0.4);
+    position: relative;
+  }
+
+  .schedule-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+  }
+
+  .schedule-card h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    color: #b3005e;
+  }
+
+  .schedule-card h4 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #222;
+  }
+
+  .time {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .date {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  .month {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .note {
+    font-style: italic;
+    color: #666;
+    margin-top: 8px;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .icon-wrapper img {
+    width: 80px;
+    height: 80px;
+    /* object-fit: contain; */
+    animation: pulse 2s infinite;
+    border-radius: 50%;
+  }
+
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .wedding-schedule {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  /* --- Cấu hình nền & tổng thể --- */
+  body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background-color: rgba(255, 192, 203, 0.2);
+    background-image: url("https://www.transparenttextures.com/patterns/cream-dust.png");
+    background-repeat: repeat;
+    text-align: center;
+    padding: 40px 15px;
+    color: #7a0026;
+  }
+
+  /* --- Tiêu đề --- */
+  .gift-section h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #7a0026;
+    margin-bottom: 10px;
+  }
+
+  .gift-section p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 30px;
+  }
+
+  /* --- Hộp quà --- */
+  .gift-boxes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .gift-box {
+    cursor: pointer;
+    border: 2px solid #b3003c;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+  }
+
+  .gift-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(255, 105, 180, 0.5);
+  }
+
+  .gift-box img {
+    width: 130px;
+    height: 130px;
+    border-radius: 15px;
+    animation: pulse 2s infinite;
+  }
+
+  .gift-label {
+    font-weight: bold;
+    color: #7a0026;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+
+  /* Hiệu ứng nhịp tim */
+  @keyframes pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.08);
+    }
+  }
+
+  /* --- Popup overlay --- */
+  .popup {
+
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .popup.active {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  /* --- Ảnh bên trong popup --- */
+  .popup-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    animation: popIn 0.4s ease;
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.5);
+  }
+
+  .popup-content img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    display: block;
+    width: 350px;
+    height:350px ;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.6rem;
+    color: #b3003c;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #ff4081;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes popIn {
+    from {
+      transform: scale(0.85);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gift-section h2 {
+      font-size: 30px;
+    } 
+    .gift-box img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .gift-label {
+      font-size: 1rem;
+    }
+    .icon-heatheat {
+      font-size: 60px !important;
+    }
+  }
+  
+   /* ==== Nút bật/tắt nhạc ==== */
+  .music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.3s;
+  }
+
+  .music-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .music-btn::before {
+    content: "🎵";
+    font-size: 24px;
+  }
+
+  /*  */
+  /* LỊCH */
+  .calendar {
+    display: inline-block;
+    border: 2px solid #b84a4a;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: #fffdfb;
+    margin-top: 20px;
+  }
+
+  .calendar h2 {
+    margin: 10px 0;
+    font-weight: bold;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+  }
+
+  th {
+    color: #444;
+  }
+
+  td.heart_day::before {
+    content: "❤️";
+    position: absolute;
+    font-size: 30px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    z-index: 0;
+    opacity: 0.8;
+  }
+
+  td.heart_day span {
+    position: relative;
+    z-index: 1;
+    /* color: #000; */
+    font-weight: bold;
+    color: white;
+
+  }
+
+  /* ĐỒNG HỒ ĐẾM NGƯỢC */
+  .countdown {
+    margin-top: 30px;
+  }
+
+  .countdown h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .time {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .time div {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #b84a4a;
+    min-width: 60px;
+  }
+
+  .wedding-img {
+    margin-top: 25px;
+  }
