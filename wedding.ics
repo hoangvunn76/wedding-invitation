@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20250702T103000
+DTEND:20250702T123000
+SUMMARY:Đám Cưới Dũng & Mỹ
+DESCRIPTION:Dũng & Mỹ hân hoan kính mời bạn đến chung vui cùng gia đình.
+LOCATION:Trung Tâm Tiệc Cưới A.Dõng Palace, 64 Trần Phú, Hà Lam, Thăng Bình
+END:VEVENT
+END:VCALENDAR
