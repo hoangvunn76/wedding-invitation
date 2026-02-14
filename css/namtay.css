@@ -1,0 +1,236 @@
+/* Common CSS */
+
+/* Popup for Wedding Card */
+#popupQR {
+  display: none;
+}
+
+#popupQR .dialog {
+  display: flex;
+}
+
+.dialogtitile {
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+.dialogtitile h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.stk.text-center {
+  text-align: center;
+}
+
+.stk .text-center b {
+  font-weight: bold;
+}
+
+.stk .stk img {
+  width: 100px;
+  height: auto;
+}
+
+/* Sticky button (for donation) */
+#call-to-donate {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  transition: bottom 0.5s linear;
+  z-index: 99;
+}
+
+.sticky-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+  width: 83px;
+  height: 120px;
+  transform: translate(-2rem, -2rem);
+}
+.sticky-btn-wrapper {
+  transform: translate(-1rem, -3rem) scale(0.7);
+}
+
+.front {
+  z-index: 900;
+  top: 3.5rem;
+  position: absolute;
+}
+
+.sticky-btn-opener {
+  transition: all 0.35s linear;
+  position: absolute;
+  left: -2.5px;
+  top: -45px;
+  z-index: 1000;
+}
+
+.button {
+  position: absolute;
+  z-index: 10000;
+  transition: all 0.35s linear;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.8rem;
+}
+
+.money1,
+.money2,
+.money3 {
+  position: absolute;
+  top: 15%;
+  transition: all 0.35s linear;
+}
+
+.money1 {
+  transform: rotateZ(-50deg) scale(0.5);
+  z-index: 200;
+  right: -2.2rem;
+  top: 2.5rem;
+  animation: customAni1 1.5s ease alternate infinite;
+}
+
+.money2 {
+  transform: rotateZ(-40deg) scale(0.5);
+  z-index: 300;
+  left: 0;
+  top: 2.5rem;
+  animation: customAni2 1.5s ease alternate infinite;
+}
+
+.money3 {
+  transform: rotateZ(50deg) scale(0.5);
+  z-index: 200;
+  left: 0rem;
+  top: 3.7rem;
+  animation: customAni3 1.5s ease alternate infinite;
+}
+
+/* Custom Animations for Money images */
+@keyframes customAni1 {
+  0% {
+    transform: rotateZ(-50deg) scale(0.5);
+    z-index: 200;
+  }
+  100% {
+    z-index: 600;
+    transform: translateY(-3rem) translateX(0rem) rotateZ(3deg) scale(1);
+  }
+}
+
+@keyframes customAni2 {
+  0% {
+    transform: rotateZ(-40deg) scale(0.5);
+    z-index: 300;
+  }
+  100% {
+    z-index: 700;
+    transform: translateY(-4rem) translateX(-0.2rem) rotateZ(-3deg) scale(1);
+  }
+}
+
+@keyframes customAni3 {
+  0% {
+    transform: rotateZ(50deg) scale(0.5);
+    z-index: 200;
+  }
+  100% {
+    z-index: 600;
+    transform: translateY(-4.6rem) translateX(-2.5rem) rotateZ(-1deg) scale(1);
+  }
+}
+
+/* Nền mặc định có màu trắng mờ nhẹ */
+.btn-outline-light {
+  background-color: rgb(255, 255, 255);
+  color: #f14e95;
+  border-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Khi hover sẽ chuyển sang nền hồng đậm */
+.btn-outline-light:hover {
+  background-color: #f14e95;
+  color: white;
+  border-color: #f14e95;
+}
+
+/* Ripple effect (giữ nguyên như đã đưa) */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.mini_calendar table {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.mini_calendar th,
+.mini_calendar td {
+  padding: 8px;
+  width: 14.2%;
+}
+
+.highlight-date {
+  background: #ed1c24;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.wedding-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.wedding-date::before,
+.wedding-date::after {
+  content: "";
+  width: 40px; /* Độ dài gạch ngang */
+  height: 1px;
+  background: white;
+  margin: 0 10px;
+  opacity: 0.8;
+}
+.mini_calendar thead th {
+  text-align: center;
+  padding: 8px 0;
+  border-top: 1px solid #ccc; /* gạch ngang */
+  border-bottom: 1px solid #ccc; /* gạch ngang */
+  font-weight: 500;
+  color: #2f3b52;
+}

@@ -1,0 +1,88 @@
+/* CSS Variables */
+:root {
+  --color-1: #0d214f;
+  --color-2: #ffedea;
+  --color-3: #6c6ea0;
+  --color-4: #fffdf8;
+  --font-1: "Meow Script";
+  --font-2: "Roboto", sans-serif;
+  --font-3: "Lexend Deca";
+}
+
+/* Sticky button styles for donation */
+#call-to-donate {
+  right: 0px !important;
+  bottom: 30px !important;
+}
+
+#nt-sticky-outer {
+  animation: 10s linear 0s infinite innerrotate;
+}
+
+#call-to-donate > div {
+  position: relative;
+}
+
+#nt-sticky-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 149px;
+  height: 149px;
+  display: flex;
+  justify-content: center;
+}
+
+#nt-sticky-inner > img {
+  width: 36px;
+  object-fit: contain;
+  animation: 8s linear 0s infinite outerrotate;
+}
+
+@keyframes outerrotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes innerrotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Popup */
+#popupQR {
+  display: none;
+}
+
+#popupQR .dialog {
+  display: flex;
+}
+
+.dialogtitile h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dialogtitile {
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+/* Close button */
+.close-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn .v-icon {
+  font-size: 24px;
+}
